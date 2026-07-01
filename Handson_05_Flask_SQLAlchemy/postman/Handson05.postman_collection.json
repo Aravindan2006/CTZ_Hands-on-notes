@@ -1,0 +1,10 @@
+{
+  "info": { "name": "Handson 05 - Flask SQLAlchemy", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    { "name": "List Courses", "request": { "method": "GET", "url": "http://127.0.0.1:5000/api/courses/" } },
+    { "name": "Create Course", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"name\":\"DB Systems\",\"code\":\"CS401\",\"credits\":3,\"department_id\":1}"}, "url": "http://127.0.0.1:5000/api/courses/" } },
+    { "name": "Course Students (JOIN)", "request": { "method": "GET", "url": "http://127.0.0.1:5000/api/courses/1/students/" } },
+    { "name": "Update Course", "request": { "method": "PUT", "url": "http://127.0.0.1:5000/api/courses/1/" } },
+    { "name": "Delete Course", "request": { "method": "DELETE", "url": "http://127.0.0.1:5000/api/courses/1/" } }
+  ]
+}
