@@ -1,0 +1,10 @@
+{
+  "info": { "name": "Handson 06 - FastAPI Basics", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    { "name": "Root", "request": { "method": "GET", "url": "http://127.0.0.1:8000/" } },
+    { "name": "List Courses (paginated)", "request": { "method": "GET", "url": "http://127.0.0.1:8000/api/courses/?skip=0&limit=10" } },
+    { "name": "Filter by department", "request": { "method": "GET", "url": "http://127.0.0.1:8000/api/courses/?department_id=1" } },
+    { "name": "Get Course by ID", "request": { "method": "GET", "url": "http://127.0.0.1:8000/api/courses/1" } },
+    { "name": "Create Course", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"name\":\"Databases\",\"code\":\"CS401\",\"credits\":3,\"department_id\":1}"}, "url": "http://127.0.0.1:8000/api/courses/" } }
+  ]
+}

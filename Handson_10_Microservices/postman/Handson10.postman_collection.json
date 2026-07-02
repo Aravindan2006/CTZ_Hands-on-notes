@@ -1,0 +1,11 @@
+{
+  "info": { "name": "Handson 10 - Microservices", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    { "name": "Gateway Health", "request": { "method": "GET", "url": "http://127.0.0.1:5000/health/" } },
+    { "name": "Course Service Health", "request": { "method": "GET", "url": "http://127.0.0.1:5001/health/" } },
+    { "name": "Student Service Health", "request": { "method": "GET", "url": "http://127.0.0.1:5002/health/" } },
+    { "name": "List Courses (via Gateway)", "request": { "method": "GET", "url": "http://127.0.0.1:5000/api/courses/" } },
+    { "name": "List Students (via Gateway)", "request": { "method": "GET", "url": "http://127.0.0.1:5000/api/students/" } },
+    { "name": "Enroll Student (inter-service call)", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"course_id\":1}"}, "url": "http://127.0.0.1:5000/api/students/1/enroll" } }
+  ]
+}

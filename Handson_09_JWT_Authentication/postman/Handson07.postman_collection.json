@@ -1,0 +1,11 @@
+{
+  "info": { "name": "Handson 07 - FastAPI CRUD", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    { "name": "List Courses", "request": { "method": "GET", "url": "http://127.0.0.1:8000/api/courses/" } },
+    { "name": "Create Course", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"name\":\"Databases\",\"code\":\"CS401\",\"credits\":3,\"department_id\":1}"}, "url": "http://127.0.0.1:8000/api/courses/" } },
+    { "name": "Update Course", "request": { "method": "PUT", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"credits\":4}"}, "url": "http://127.0.0.1:8000/api/courses/1" } },
+    { "name": "Delete Course", "request": { "method": "DELETE", "url": "http://127.0.0.1:8000/api/courses/1" } },
+    { "name": "Create Student", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"first_name\":\"Asha\",\"last_name\":\"Menon\",\"email\":\"asha@college.edu\",\"department_id\":1}"}, "url": "http://127.0.0.1:8000/api/students/" } },
+    { "name": "Create Enrollment (bg task)", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"student_id\":1,\"course_id\":1}"}, "url": "http://127.0.0.1:8000/api/enrollments/" } }
+  ]
+}
