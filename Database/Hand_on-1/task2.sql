@@ -1,0 +1,63 @@
+-- =====================================================================
+-- Hands-On 1 : Task 2
+-- Verify Normalisation (1NF, 2NF, 3NF) for college_db
+-- =====================================================================
+
+-- ---------------------------------------------------------------------
+-- FIRST NORMAL FORM (1NF) -- Atomic values, no repeating groups
+-- ---------------------------------------------------------------------
+-- Every column in every table (students, departments, courses,
+-- enrollments, professors) holds a single, atomic value per row.
+-- e.g. students.email holds exactly one email address, not a list.
+--
+-- Hypothetical 1NF VIOLATION: if we had designed the students table with
+-- a single column "phone_numbers VARCHAR(200)" storing a comma separated
+-- list such as '9876543210,9123456780', that would break 1NF because the
+-- column is no longer atomic. The correct fix is a separate
+-- student_phone_numbers(student_id, phone_number) table (one row per
+-- number), which is exactly the kind of design decision 1NF forces us
+-- to make.
+
+-- ---------------------------------------------------------------------
+-- SECOND NORMAL FORM (2NF) -- No partial dependency on a composite key
+-- ---------------------------------------------------------------------
+-- 2NF only matters for tables with a COMPOSITE primary/candidate key.
+-- In our schema, "enrollments" has a natural composite candidate key of
+-- (student_id, course_id) -- a student can only enroll in a given course
+-- once. We instead use a surrogate key enrollment_id as the PRIMARY KEY,
+-- which sidesteps partial-dependency issues by design, but it is still
+-- worth checking:
+--   - enrollment_date depends on the (student_id, course_id) PAIR, not
+--     on student_id alone or course_id alone -> OK, fully dependent.
+--   - grade depends on the (student_id, course_id) PAIR (a student's
+--     grade is specific to that particular course enrollment) -> OK.
+-- No column in enrollments depends on only *part* of the composite key,
+-- so the table satisfies 2NF. (We additionally enforce the composite
+-- uniqueness with a UNIQUE index in Hands-On 4, Task 2.)
+
+-- ---------------------------------------------------------------------
+-- THIRD NORMAL FORM (3NF) -- No transitive dependencies
+-- ---------------------------------------------------------------------
+-- A transitive dependency exists when a non-key column depends on
+-- another non-key column, which in turn depends on the primary key,
+-- instead of depending on the primary key directly.
+--
+-- Hypothetical 3NF VIOLATION: if we stored dept_name directly inside the
+-- students table (in addition to department_id), then:
+--     student_id -> department_id -> dept_name
+-- dept_name would depend transitively on student_id THROUGH
+-- department_id, rather than directly. That is a 3NF violation because
+-- updating a department's name would require updating it in every
+-- student row that duplicates it (an update anomaly). Our actual design
+-- avoids this: students only stores department_id (a foreign key), and
+-- dept_name lives solely in the departments table, retrieved via JOIN
+-- when needed.
+--
+-- Same reasoning applies to courses (department_id only, no dept_name
+-- copy) and professors (department_id only, no dept_name copy).
+--
+-- CONCLUSION: college_db (departments, students, courses, enrollments,
+-- professors) is normalised through 3NF: values are atomic (1NF),
+-- non-key attributes are fully dependent on their whole primary key
+-- (2NF), and there are no transitive dependencies among non-key
+-- attributes (3NF).
