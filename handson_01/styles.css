@@ -1,0 +1,155 @@
+/* =========================================================
+   CSS RESET
+   Removes default browser spacing and sets a consistent
+   box model across all elements.
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   BODY
+   Sets the base font, colors, and line spacing for the
+   whole page.
+========================================================= */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   HEADER
+   The top bar containing the site title and navigation.
+   Flexbox is used to place the title and nav side by side.
+========================================================= */
+header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.6rem;
+}
+
+/* =========================================================
+   NAVIGATION
+   Displays the menu links horizontally with spacing
+   and a hover color effect.
+========================================================= */
+nav ul {
+    list-style: none;   /* remove bullet points */
+    display: flex;      /* lay out links in a row */
+}
+
+nav ul li {
+    margin-left: 25px;  /* spacing between menu items */
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;   /* remove underline */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;   /* hover color effect */
+}
+
+/* =========================================================
+   HERO SECTION
+   Introductory banner with centered text and a
+   call-to-action button.
+========================================================= */
+#hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #ffffff;
+}
+
+#hero h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    max-width: 600px;
+    margin: 0 auto 30px auto;  /* center the paragraph, spacing below */
+    color: #555555;
+}
+
+#hero button {
+    background-color: #1abc9c;
+    color: #ffffff;
+    border: none;
+    padding: 14px 30px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#hero button:hover {
+    background-color: #16a085;
+    transform: translateY(-2px);  /* subtle lift effect on hover */
+}
+
+/* =========================================================
+   COURSES SECTION
+   Displays course cards using a reusable class.
+========================================================= */
+#courses {
+    padding: 60px 40px;
+}
+
+#courses h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* Reusable card style for each course article */
+.course-card {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 0 auto 25px auto;
+    max-width: 700px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.course-card h3 {
+    color: #1abc9c;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    color: #555555;
+}
+
+/* =========================================================
+   FOOTER
+   Simple dark footer with centered copyright text.
+========================================================= */
+footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
