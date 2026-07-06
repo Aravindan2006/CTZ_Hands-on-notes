@@ -1,0 +1,11 @@
+{
+  "info": { "name": "Handson 08 - REST API Best Practices", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    { "name": "Paginated List", "request": { "method": "GET", "url": "http://127.0.0.1:8000/api/v1/courses/?page=1&page_size=2" } },
+    { "name": "Search Filter", "request": { "method": "GET", "url": "http://127.0.0.1:8000/api/v1/courses/?search=Web" } },
+    { "name": "Create Course (Location header)", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"name\":\"Databases\",\"code\":\"CS401\",\"credits\":3,\"department_id\":1}"}, "url": "http://127.0.0.1:8000/api/v1/courses/" } },
+    { "name": "PATCH partial update", "request": { "method": "PATCH", "header": [{"key":"Content-Type","value":"application/json"}], "body": {"mode":"raw","raw":"{\"credits\":5}"}, "url": "http://127.0.0.1:8000/api/v1/courses/1/" } },
+    { "name": "PUT full replace", "request": { "method": "PUT", "url": "http://127.0.0.1:8000/api/v1/courses/1/" } },
+    { "name": "Standardised 404 error", "request": { "method": "GET", "url": "http://127.0.0.1:8000/api/v1/courses/999/" } }
+  ]
+}

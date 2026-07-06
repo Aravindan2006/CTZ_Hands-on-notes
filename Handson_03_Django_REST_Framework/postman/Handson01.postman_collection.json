@@ -1,0 +1,15 @@
+{
+  "info": {
+    "name": "Handson 01 - Django Project Setup",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Hello Endpoint",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:8000/api/hello/"
+      }
+    }
+  ]
+}
