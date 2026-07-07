@@ -1,0 +1,18 @@
+<section aria-labelledby="course-detail-heading">
+  <button class="btn btn-outline back-btn" (click)="goBack()">&larr; Back to courses</button>
+
+  <app-loading-spinner *ngIf="loading" message="Loading course details..."></app-loading-spinner>
+
+  <p *ngIf="!loading && notFound">Sorry, we couldn't find that course.</p>
+
+  <div class="detail-card" *ngIf="!loading && course">
+    <h1 id="course-detail-heading">{{ course.name }}</h1>
+    <p class="course-code">{{ course.code }} &middot; {{ course.credits }} credits</p>
+    <p class="course-description">{{ course.description }}</p>
+    <p *ngIf="course.grade">Current grade: <strong>{{ course.grade }}</strong></p>
+
+    <button class="btn btn-primary" (click)="onEnroll()" [disabled]="enrolled">
+      {{ enrolled ? 'Enrolled ✓ redirecting…' : 'Enroll' }}
+    </button>
+  </div>
+</section>

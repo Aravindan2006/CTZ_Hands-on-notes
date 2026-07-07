@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal — JavaScript ES6+ &amp; DOM Manipulation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <p class="site-name">Student Portal</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#profile">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>Welcome to the Student Portal</h1>
+      <p>Search, sort, and select your courses — all rendered dynamically with JavaScript.</p>
+    </section>
+
+    <section id="courses">
+      <h2>Your Courses</h2>
+
+      <div class="toolbar">
+        <input type="text" id="search-courses" placeholder="Search courses..." />
+        <button id="sort-btn">Sort by Credits</button>
+      </div>
+
+      <!-- Intentionally empty — populated entirely by app.js (Step 35) -->
+      <div class="course-grid" id="course-grid"></div>
+
+      <p id="total-credits"></p>
+      <div id="selected-course"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. Built for Digital Nurture 5.0 — Hands-On 3.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

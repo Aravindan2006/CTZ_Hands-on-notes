@@ -1,0 +1,13 @@
+{
+  "name": "student-portal-accessibility",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Accessible, cross-browser-compatible Student Portal (plain HTML/CSS/JS)",
+  "scripts": {
+    "start": "npx serve . -l 5500",
+    "serve": "npx serve . -l 5500"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

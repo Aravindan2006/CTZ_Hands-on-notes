@@ -1,0 +1,37 @@
+<section aria-labelledby="profile-heading">
+  <h1 id="profile-heading">My Profile</h1>
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form" novalidate>
+    <div class="form-field">
+      <label for="name">Full name</label>
+      <input id="name" type="text" formControlName="name" />
+      <p class="field-error" *ngIf="name.invalid && (name.touched || submitted)">
+        Name is required (min. 2 characters).
+      </p>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <p class="field-error" *ngIf="email.invalid && (email.touched || submitted)">
+        Enter a valid email address.
+      </p>
+    </div>
+
+    <div class="form-field">
+      <label for="semester">Semester</label>
+      <input id="semester" type="number" min="1" max="8" formControlName="semester" />
+      <p class="field-error" *ngIf="semester.invalid && (semester.touched || submitted)">
+        Semester must be between 1 and 8.
+      </p>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid">
+      Save profile
+    </button>
+
+    <p class="success-msg" *ngIf="submitted && profileForm.valid" role="status">
+      Profile saved successfully.
+    </p>
+  </form>
+</section>

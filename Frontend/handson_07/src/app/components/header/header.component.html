@@ -1,0 +1,12 @@
+<header class="app-header">
+  <div class="container header-inner">
+    <a routerLink="/" class="brand">{{ siteName }}</a>
+
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Courses</a></li>
+        <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

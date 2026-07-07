@@ -1,0 +1,125 @@
+/* =====================================================================
+   Hands-On 1 — CSS3 Fundamentals: reset, box model, typography, layout
+   ===================================================================== */
+
+/* CSS reset (Step 8) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding & border included inside declared width */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+  color: #1c2333;
+  line-height: 1.5;
+}
+
+/* Header (Step 10) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e5ee;
+}
+
+.site-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Nav links (Step 11) */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  color: #2b5cff;
+}
+
+/* Hero section (Step 12) */
+#hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+#hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+#hero p {
+  color: #5c6577;
+  margin-bottom: 1.5rem;
+}
+
+#hero button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #2b5cff;
+  border-radius: 6px;
+  background-color: #2b5cff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#hero button:hover {
+  background-color: #1c3fc4;
+}
+
+/* Courses section */
+#courses {
+  padding: 2rem;
+}
+
+#courses h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* Course card (Step 13) */
+.course-card {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid #e1e5ee;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(20, 30, 60, 0.08);
+  margin-bottom: 1.25rem;
+  background-color: #ffffff;
+}
+
+.course-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  color: #5c6577;
+  margin-bottom: 0.5rem;
+}
+
+.course-card span {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #2b5cff;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e1e5ee;
+  color: #5c6577;
+  font-size: 0.9rem;
+}

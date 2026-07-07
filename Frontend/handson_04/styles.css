@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fb;
+  color: #1c2333;
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e1e5ee;
+}
+
+.site-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+main section {
+  padding: 1.5rem;
+}
+
+main h2 {
+  margin-bottom: 1rem;
+}
+
+#courses-status,
+#notifications-loading,
+#axios-status {
+  color: #5c6577;
+  margin-bottom: 1rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.course-card {
+  padding: 1.1rem;
+  border: 1px solid #e1e5ee;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(20, 30, 60, 0.08);
+  background: #fff;
+}
+
+.course-code,
+.course-credits {
+  color: #5c6577;
+  font-size: 0.9rem;
+}
+
+.notification-card {
+  padding: 1rem 1.2rem;
+  border: 1px solid #e1e5ee;
+  border-radius: 8px;
+  background: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.error-banner {
+  background: #fdeceb;
+  color: #b3261e;
+  border: 1px solid #f3c6c3;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+}
+
+#retry-btn {
+  padding: 0.6rem 1.1rem;
+  border: 1px solid #2b5cff;
+  border-radius: 6px;
+  background: #2b5cff;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 0.75rem;
+}
+
+#axios-posts {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+#axios-posts li {
+  margin-bottom: 0.4rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #fff;
+  border-top: 1px solid #e1e5ee;
+  color: #5c6577;
+  font-size: 0.9rem;
+}

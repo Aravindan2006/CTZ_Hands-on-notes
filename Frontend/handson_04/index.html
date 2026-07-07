@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal — Async JS, Fetch API &amp; Axios</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Axios via CDN (Hands-On 4, Task 3, Step 55) -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <p class="site-name">Student Portal</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#notifications">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="courses">
+      <h2>Your Courses</h2>
+      <p id="courses-status">Loading courses...</p>
+      <div class="course-grid" id="course-grid"></div>
+    </section>
+
+    <section id="notifications">
+      <h2>Notifications</h2>
+      <div id="notifications-list">
+        <p id="notifications-loading">Loading notifications...</p>
+      </div>
+      <button id="retry-btn" hidden>Retry</button>
+    </section>
+
+    <section id="axios-demo">
+      <h2>Axios Demo</h2>
+      <p id="axios-status">Fetching user 1's posts with Axios...</p>
+      <ul id="axios-posts"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Student Portal. Built for Digital Nurture 5.0 — Hands-On 4.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

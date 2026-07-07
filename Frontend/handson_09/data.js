@@ -1,0 +1,44 @@
+// Sample course data for the accessible Student Portal.
+// Kept as an ES module so it can be imported with <script type="module">.
+export const courses = [
+  {
+    id: 1,
+    name: 'Data Structures & Algorithms',
+    code: 'CS101',
+    credits: 4,
+    grade: 'A',
+    description: 'Core data structures, algorithmic complexity, and problem solving.',
+  },
+  {
+    id: 2,
+    name: 'Database Management Systems',
+    code: 'CS102',
+    credits: 3,
+    grade: 'B',
+    description: 'Relational modelling, SQL, normalisation, and transactions.',
+  },
+  {
+    id: 3,
+    name: 'Object Oriented Programming',
+    code: 'CS103',
+    credits: 4,
+    grade: 'A',
+    description: 'Classes, inheritance, polymorphism, and design patterns.',
+  },
+  {
+    id: 4,
+    name: 'Circuit Theory',
+    code: 'EC101',
+    credits: 3,
+    grade: 'B',
+    description: 'Fundamentals of electrical circuits and network analysis.',
+  },
+  {
+    id: 5,
+    name: 'Thermodynamics',
+    code: 'ME101',
+    credits: 3,
+    grade: 'C',
+    description: 'Laws of thermodynamics and energy transfer systems.',
+  },
+];

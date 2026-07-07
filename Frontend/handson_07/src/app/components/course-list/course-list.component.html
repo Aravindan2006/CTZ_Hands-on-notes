@@ -1,0 +1,37 @@
+<section aria-labelledby="courses-heading">
+  <h1 id="courses-heading">Browse Courses</h1>
+
+  <div class="search-row">
+    <label for="search-courses" class="visually-hidden">Search courses</label>
+    <input
+      id="search-courses"
+      type="text"
+      placeholder="Search courses..."
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearchChange()"
+    />
+    <p class="results-count" role="status" aria-live="polite">
+      {{ filteredCourses.length }} course{{ filteredCourses.length === 1 ? '' : 's' }} found
+    </p>
+  </div>
+
+  <app-loading-spinner *ngIf="loading" message="Loading courses..."></app-loading-spinner>
+
+  <p class="error-banner" *ngIf="errorMessage && !loading">{{ errorMessage }}</p>
+
+  <div class="course-grid" *ngIf="!loading && !errorMessage">
+    <app-course-card
+      *ngFor="let course of filteredCourses; trackBy: trackByCourseId"
+      [id]="course.id"
+      [name]="course.name"
+      [code]="course.code"
+      [credits]="course.credits"
+      [grade]="course.grade"
+      (select)="onSelectCourse($event)"
+    ></app-course-card>
+  </div>
+
+  <p *ngIf="!loading && !errorMessage && filteredCourses.length === 0">
+    No courses found.
+  </p>
+</section>

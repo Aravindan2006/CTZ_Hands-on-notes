@@ -1,0 +1,13 @@
+<article
+  class="course-card"
+  tabindex="0"
+  role="button"
+  [attr.aria-label]="name + ', ' + credits + ' credits'"
+  (click)="onActivate()"
+  (keydown)="onKeydown($event)"
+>
+  <h3>{{ name }}</h3>
+  <p class="course-code">{{ code }}</p>
+  <p class="course-credits"><span>{{ credits }}</span> credits</p>
+  <p class="course-grade" *ngIf="grade">Grade: <strong>{{ grade }}</strong></p>
+</article>
